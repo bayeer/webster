@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+require __DIR__.'/includes/functions.php';
+require __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Webster\Webster;
+use Webster\Command\SetupProxyVhostCommand;
+use Webster\Command\DeleteProxyVhostCommand;
+use Webster\Command\SetupSiteCommand;
+use Webster\Command\DeleteSiteCommand;
+use Webster\Command\SetupDockerCommand;
+use Webster\Command\StartDockerCommand;
+use Webster\Command\StopDockerCommand;
+use Webster\Command\RestartDockerCommand;
+
+
+
+$conf = Webster::getConf();
+
+$app = new Application($conf['app_name'], $conf['app_version']);
+
+$app->add(new SetupProxyVhostCommand());
+$app->add(new DeleteProxyVhostCommand());
+
+$app->add(new SetupSiteCommand());
+$app->add(new DeleteSiteCommand());
+
+$app->add(new SetupDockerCommand());
+$app->add(new StartDockerCommand());
+$app->add(new StopDockerCommand());
+$app->add(new RestartDockerCommand());
+
+$app->run();

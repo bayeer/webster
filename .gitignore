@@ -1,0 +1,6 @@
+/includes/conf.php
+/vendor/
+composer.lock
+/.idea/
+/sites-available/*
+/sites-enabled/*

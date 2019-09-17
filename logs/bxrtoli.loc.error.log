@@ -1,0 +1,34 @@
+2018/08/26 17:10:05 [error] 14869#14869: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/bayeer/Sites/burlang/bxrtoli.loc/storage/logs/laravel-2018-08-26.log" could not be opened: failed to open stream: Permission denied in /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php:14171
+Stack trace:
+#0 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14272): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14101): Monolog\Handler\RotatingFileHandler->write(Array)
+#2 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13861): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13959): Monolog\Logger->addRecord(400, Object(UnexpectedValueException), Array)
+#4 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13654): Monolog\Logger->error(Object(UnexpectedValueException), Array)
+#5 /home/bayeer/Sites/bur...
+PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/bayeer/Sites/burlang/bxrtoli.loc/storage/logs/laravel-2018-08-26.log" could not be opened: failed to open stream: Permission denied in /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php:14171
+Stack trace:
+#0 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14272): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14101): Monolog\Handler\RotatingFileHandler->write(Array)
+#2 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13861): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13959): Monolog\Logger->addRecord(400, Object(Symfony\Component\Debug\Exception\FatalErrorException), Array)
+#4 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(1
+2018/08/26 17:10:56 [error] 14869#14869: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/bayeer/Sites/burlang/bxrtoli.loc/storage/logs/laravel-2018-08-26.log" could not be opened: failed to open stream: Permission denied in /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php:14171
+Stack trace:
+#0 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14272): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14101): Monolog\Handler\RotatingFileHandler->write(Array)
+#2 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13861): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13959): Monolog\Logger->addRecord(400, Object(UnexpectedValueException), Array)
+#4 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13654): Monolog\Logger->error(Object(UnexpectedValueException), Array)
+#5 /home/bayeer/Sites/bur...
+PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/bayeer/Sites/burlang/bxrtoli.loc/storage/logs/laravel-2018-08-26.log" could not be opened: failed to open stream: Permission denied in /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php:14171
+Stack trace:
+#0 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14272): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(14101): Monolog\Handler\RotatingFileHandler->write(Array)
+#2 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13861): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(13959): Monolog\Logger->addRecord(400, Object(Symfony\Component\Debug\Exception\FatalErrorException), Array)
+#4 /home/bayeer/Sites/burlang/bxrtoli.loc/bootstrap/cache/compiled.php(1
+2018/09/10 18:53:45 [crit] 1200#1200: *1 connect() to unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 127.0.0.1, server: bxrtoli.loc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock:", host: "bxrtoli.loc", referrer: "http://localhost:8000/"
+2018/09/10 23:03:50 [crit] 1192#1192: *1 connect() to unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 127.0.0.1, server: bxrtoli.loc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock:", host: "bxrtoli.loc", referrer: "http://localhost:8001/"
+2018/12/20 00:28:22 [error] 1543#1543: *1 connect() to unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: bxrtoli.loc, request: "HEAD / HTTP/1.1", upstream: "fastcgi://unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock:", host: "bxrtoli.loc"
+2018/12/20 00:28:31 [error] 1543#1543: *1 connect() to unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: bxrtoli.loc, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/home/bayeer/.phpbrew/php/php-7.0.24/var/run/php-fpm.sock:", host: "bxrtoli.loc"
