@@ -2,10 +2,23 @@
 Tool for web applications development based on docker-compose containers.
 
 
+# Installation
+
+1. Clone project
+```
+> git clone git@github.com:bayeer/webster.git ~/Webster/
+```
+2. Install packages
+```
+> cd ~/Webster && composer install
+```
+3. That's all. You're ready to GO!
+
+
 # Quick start
 
 
-## Setup projects:
+### Setup projects
 
 * Laravel site:
 ```
@@ -28,7 +41,7 @@ Tool for web applications development based on docker-compose containers.
 ```
 
 
-## Proxy virtual host to docker container
+### Proxy virtual host to docker container
 
 * Creates reverse proxy config for domain `testsite.loc` to `localhost:3000`:
 ```
@@ -40,7 +53,7 @@ Tool for web applications development based on docker-compose containers.
 > ./webster delete-proxy-vhost testsite.loc
 ```
 
-## Docker commands
+### Docker commands
 
 * Start docker container (execute `docker-compose up -d`) in project directory:
 ```
@@ -60,7 +73,7 @@ Tool for web applications development based on docker-compose containers.
 
 
 
-## Delete projects
+### Delete projects
 
 * Delete application with database:
 ```
@@ -72,7 +85,7 @@ Tool for web applications development based on docker-compose containers.
 > ./webster delete-site hello.loc
 ```
 
-## Other examples
+### Other examples
 
 ```
 > ./webster setup-site laratest.loc --type=laravel --charset=utf8 --distro=yes
