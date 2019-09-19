@@ -1,72 +1,47 @@
 <?php
-
-/*
-        // settings
-        $dbhost                 = '127.0.0.1';
-        $dbpass                 = '123';
-        $dbrootpass             = 'u16u12a';
-        $etcHosts               = '/etc/hosts';
-        $docRoot                = '/Users/bayeer/Sites/';
-        $nginxConfDir           = '/usr/local/etc/nginx/';
-        $nginxLogDir            = '/usr/local/var/log/nginx/';
-        $nginxRestartCommand    = 'nginx -s reload';
-*/
-
 return [
+    // your OS username
+    'os_username'               => 'bill',
 
-    /**
-     * Virtual hosts for local PC are generally defined in this file
-     */
+    // your OS user group
+    'os_usergroup'              => 'bill',
 
+    // local nginx sites-available directory
+    'nginx_sites_available_dir' => '~/Webster/sites-available/',
+
+    // local nginx sites-enabled directory
+    'nginx_sites_enabled_dir'   => '~/Webster/sites-enabled/',
+
+    // projects directory
+    'projects_dir'              => '~/Dev/php/',
+
+    // databases directory
+    'databases_dir'             => '~/Dev/DockerDatabases/mysql/',
+
+    // mysql credentials
+    'mysql'                     => [
+                                        'host'              => 'localhost',
+                                        'username'          => 'root',
+                                        'root_password'     => 'u16u12a',
+                                        'default_password'  => '123',
+                                        'charset'           => 'utf8',
+                                        'collation'         => 'utf8_general_ci'
+                                    ],
+
+    // Virtual hosts for local PC
     'etc_hosts' => '/etc/hosts',
 
-    /**
-     * Document root for nginx
-     */
-    'document_root' => '/var/www/',
+    // nginx directory
+    'nginx_conf_dir'            => '/etc/nginx/',
 
-    /**
-     * Nginx directory
-     */
-    'nginx_dir' => '/etc/nginx/',
+    // Nginx log directory
+    'nginx_log_dir'             => '/var/log/nginx/',
 
-    /**
-     * Nginx log directory
-     */
-    'nginx_log_dir' => '/var/log/nginx/',
+    // Nginx restart command
+    'nginx_restart_cmd'         => 'sudo systemctl restart nginx',
 
-    /**
-     * Nginx restart command
-     */
-    'nginx_restart_cmd' => 'service nginx reload',
-
-    /**
-     * PHP FPM socket path
-     */
-    'phpfpm_socket_path' => '/home/bayeer/.phpbrew/php/php-5.6.21/var/run/php-fpm.sock',
-
-    /**
-     * Here are each of the database connections setup for your application
-     */
-    'mysql' => [
-        'host'      => 'localhost',
-        'username'  => 'root',
-        'root_password'  => 'u16u12a',
-        'default_password' => '123',
-        'charset'   => 'utf8',
-        'collation' => 'utf8_general_ci'
-    ],
-    /**
-     * OS username
-     */
-    'os_username' => 'vagrant',
-    /**
-     * OS user group
-     */
-    'os_usergroup' => 'vagrant',
-    /**
-     * Version
-     */
-    'version' => 'v2.4'
-
+    // Version
+    'app_name'                  => 'Webster',
+    'app_version'               => 'v2.2',
+    'app_created_at'            => '2016-2019',
 ];
