@@ -29,7 +29,7 @@ return [
                                     ],
 
     // Virtual hosts for local PC
-    'etc_hosts' => '/etc/hosts',
+    'etc_hosts'                 => '/etc/hosts',
 
     // nginx directory
     'nginx_conf_dir'            => '/etc/nginx/',
