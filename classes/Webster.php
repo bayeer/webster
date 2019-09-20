@@ -21,6 +21,7 @@ class Webster
     public function __construct()
     {
         $this->conf = $conf = self::getConf();
+        $this->resolveTildaDirs();
     }
 
 
@@ -260,6 +261,28 @@ EOF;
     }
 
 
+    public static function getWebsterPath() {
+        return realpath(__DIR__ . '/../');
+    }
+
+
+    public static function getConf()
+    {
+        return include(self::getWebsterPath() . '/includes/conf.php');
+    }
+
+
+    private function resolveTildaDirs()
+    {
+        $this->conf['projects_dir']                 = expand_tilde($this->conf['projects_dir']);
+        $this->conf['databases_dir']                = expand_tilde($this->conf['databases_dir']);
+        $this->conf['nginx_sites_available_dir']    = expand_tilde($this->conf['nginx_sites_available_dir']);
+        $this->conf['nginx_sites_enabled_dir']      = expand_tilde($this->conf['nginx_sites_enabled_dir']);
+        $this->conf['nginx_conf_dir']               = expand_tilde($this->conf['nginx_conf_dir']);
+        $this->conf['nginx_log_dir']                = expand_tilde($this->conf['nginx_log_dir']);
+    }
+
+
     private function resolveProjectDir($domain, $projectDir)
     {
         if ( !(file_exists($this->conf['projects_dir']) && is_dir($this->conf['projects_dir'])) ) {
@@ -269,16 +292,5 @@ EOF;
             $projectDir = $this->conf['projects_dir'] . domain_basename($domain) . '/';
         }
         return $projectDir;
-    }
-
-
-    public static function getWebsterPath() {
-        return realpath(__DIR__ . '/../');
-    }
-
-
-    public static function getConf()
-    {
-        return include(self::getWebsterPath() . '/includes/conf.php');
     }
 }
