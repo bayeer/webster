@@ -145,3 +145,8 @@ delete:
 # ~/Webster/webster stop-docker ~/Dev/php/hellolara/
 # ~/Webster/webster start-docker ~/Dev/php/hellolara/
 ```
+
+# Requirements
+
+* `*nix` operating system required
+* nginx installed on your system required
