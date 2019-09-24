@@ -41,7 +41,9 @@ class DockerCompose
 
     public function __destruct()
     {
-        chdir($this->oldCwd);
+        if (file_exists($this->oldCwd) && is_dir($this->oldCwd)) {
+            chdir($this->oldCwd);
+        }
     }
 
     
