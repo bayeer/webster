@@ -146,7 +146,9 @@ delete:
 # ~/Webster/webster start-docker ~/Dev/php/hellolara/
 ```
 
-# Requirements
+# Requirements for your PC:
 
-* `*nix` operating system required
-* nginx installed on your system required
+* `*nix` operating system
+* `nginx` installed
+* `docker` installed
+* `docker-composer` installed
