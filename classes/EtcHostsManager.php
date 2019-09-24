@@ -60,8 +60,9 @@ class EtcHostsManager
      *
      * @param string $filepath
      */
-    public function backup($filepath='/home/bayeer/Temp/hosts')
+    public function backup($filepath='~/Webster/hosts')
     {
+        $filepath = expand_tilde($filepath);
         file_put_contents($filepath, $this->contents);
     }
 
