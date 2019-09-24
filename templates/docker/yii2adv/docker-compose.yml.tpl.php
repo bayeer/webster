@@ -26,6 +26,7 @@ services:
   database:
     image: 'mysql:5.6'
     restart: always
+    command: --default-authentication-plugin=mysql_native_password --character-set-server={$charset} --collation-server={$charset}_general_ci
     environment:
       - MYSQL_DATABASE={$dbName}
       - MYSQL_ROOT_PASSWORD={$dbRootPassw}
