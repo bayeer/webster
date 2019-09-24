@@ -19,12 +19,12 @@ class DeleteSiteCommand extends Command
         $conf = Webster::getConf();
 
         $help = <<<EOF
-Creates site `domain` to `projectdir`.
+Creates site `domain` to `dir`.
 
 Try like this:
-> ./webster delete-site -f hellolara.loc ~/Dev/php/hellolara/ --dbdir=~/Dev/DockerDatabases/mysql/hellolara/
+> ./webster delete-site -f hellolara.loc --dir=~/Dev/php/hellolara/ --dbdir=~/DockerDatabases/mysql/hellolara/
 or
-> ./webster delete-site hellolara.loc ~/Dev/php/hellolara/
+> ./webster delete-site hellolara.loc --dir=~/Dev/php/hellolara/ --dbdir=~/DockerDatabases/mysql/hellolara/
 
 You will need to enter 'sudo' password to write to `/etc/hosts` file.
  
@@ -39,7 +39,7 @@ EOF;
             ->setDefinition(
                 new InputDefinition(array(
                     new InputArgument('domain' , InputArgument::REQUIRED, 'Site domain name.'),
-                    new InputOption('projectdir', 'd', InputArgument::OPTIONAL, 'Project directory.', ''),
+                    new InputOption('dir', 'd', InputArgument::OPTIONAL, 'Project directory.', ''),
                     new InputOption('force', 'f', InputArgument::OPTIONAL, 'Force to delete', null),
                     new InputOption('dbdir', 'db', InputArgument::OPTIONAL, 'Directory path for db', ''),
                 ))
@@ -50,7 +50,7 @@ EOF;
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $domain         = $input->getArgument('domain');
-        $projectDir     = $input->getOption('projectdir');
+        $projectDir     = $input->getOption('dir');
         $dbDir          = $input->getOption('dbdir');
         $force          = $input->getOption('force');
 

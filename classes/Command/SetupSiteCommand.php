@@ -22,11 +22,11 @@ class SetupSiteCommand extends Command
 Creates site `domain` to `projectdir`.
 
 Try like this:
-> ./webster setup-site hellolara.loc
+> ./webster setup-site hellolara.loc --type=laravel
 or
-> ./webster setup-site hellolara.loc --dir=/Dev/php/hello-lara/ --proxyhost=localhost:3001 --type=laravel --dbdir=~/Dev/DockerDatabases/mysql/ --charset=utf8 --distro=yes
+> ./webster setup-site hellolara.loc --dir=/Dev/php/hello-lara/ --type=laravel --dbdir=~/DockerDatabases/mysql/ --charset=utf8 --distro=no
 or
-> ./webster setup-site hellolara.loc -d ~/Dev/php/hello-lara/ -px localhost:3001 -t laravel -db ~/Dev/php/hellolara/db/mysql/ -cs utf8 -ds yes
+> ./webster setup-site hellolara.loc -d ~/Dev/php/hello-lara/ -t laravel -db ~/DockerDatabases/mysql/ -cs utf8 -ds no
 
 
 You will need to enter 'sudo' password to write to `/etc/hosts` file.

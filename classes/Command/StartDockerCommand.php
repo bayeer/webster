@@ -20,7 +20,7 @@ class StartDockerCommand extends Command
 
         $help = <<<EOF
 Try like this:
-> ./webster start-docker ~/Dev/php/hello-lara/"
+> ./webster start-docker ~/Dev/php/hellolara/"
 
 You will need to enter 'sudo' password to write to /etc/hosts file. 
 

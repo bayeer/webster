@@ -20,7 +20,7 @@ class SetupDockerCommand extends Command
 
         $help = <<<EOF
 Try like this:
-> ./webster setup-docker ~/Dev/php/hello-lara/ localhost:3001 --type=laravel"
+> ./webster setup-docker ~/Dev/php/hellolara/ localhost:7000 --type=laravel"
 
 You will need to enter 'sudo' password to write to /etc/hosts file. 
 
@@ -33,7 +33,7 @@ EOF;
             ->setHelp($help)
             ->setDefinition(
                 new InputDefinition(array(
-                    new InputArgument('projectdir', InputArgument::REQUIRED, 'Project directory.'),
+                    new InputArgument('dir', InputArgument::REQUIRED, 'Project directory.'),
                     new InputArgument('proxyhost', InputArgument::REQUIRED, 'Proxied host name.'),
                     new InputOption('type', 'type', InputArgument::OPTIONAL, 'Project framework/cms type', 'simple'),
                     new InputOption('dbdir', 'dbdir', InputArgument::OPTIONAL, 'Directory path for db', ''),
@@ -44,7 +44,7 @@ EOF;
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $projectDir     = $input->getArgument('projectdir');
+        $projectDir     = $input->getArgument('dir');
         $proxyHost      = $input->getArgument('proxyhost');
         $projectType    = $input->getOption('type');
         $dbDir          = $input->getOption('dbdir');
