@@ -16,7 +16,23 @@ Tool for web applications development based on docker-compose containers.
 ```
 # cp -p ~/Webster/includes/conf.php.sample ~/Webster/includes/conf.php
 ```
-4. That's all. You're ready to GO!
+4. Edit local nginx.conf
+```
+# sudo nano /etc/nginx/nginx.conf  
+```
+add include line for Webster after `include /etc/nginx/sites-enabled/*;`
+```
+http {
+    ...
+    include /etc/nginx/sites-enabled/*;
+    include /home/<your-username-here>/Webster/sites-enabled/*;
+}
+```
+5. Restart local nginx
+```
+# sudo systemctl restart nginx
+```
+6. You're ready to GO!
 
 
 # Quick start
