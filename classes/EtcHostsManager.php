@@ -10,6 +10,11 @@ class EtcHostsManager
     private $contents = '';
     private $tmpEtcHostsFilepath;
 
+    const ITEM_TYPE_DOMAIN = 'DOMAIN';
+    const ITEM_TYPE_EMPTY = 'EMPTY';
+    const ITEM_TYPE_COMMENT = 'COMMENT';
+    const ITEM_TYPE_DOMAINMULTIPLE = 'DOMAINMULTIPLE';
+
     /**
      * EtcHostsManager constructor.
      * @param string $etcHostsPath
@@ -34,7 +39,7 @@ class EtcHostsManager
     public function add($domain, $ip = '127.0.0.1')
     {
         $item = [
-            'type'      => 'DOMAIN',
+            'type'      => self::ITEM_TYPE_DOMAIN,
             'num'       => count($this->items)-2,
             'key'       => $domain,
             'value'     => $ip,
@@ -77,7 +82,7 @@ class EtcHostsManager
 
         $output = '';
         foreach ($this->items as $item) {
-            if ($item['type'] != 'DOMAIN') {
+            if ($item['type'] != self::ITEM_TYPE_DOMAIN) {
                 $output .= "{$item['value']}\n";
             }
             else {
@@ -124,7 +129,7 @@ class EtcHostsManager
             $line = trim($L);
             if (!$line) {
                 $item = [
-                    'type'      => 'EMPTY',
+                    'type'      => self::ITEM_TYPE_EMPTY,
                     'num'       => $n,
                     'key'       => null,
                     'value'     => null,
@@ -133,7 +138,7 @@ class EtcHostsManager
             else {
                 if (@$line{0} === '#') { // if comment line
                     $item = [
-                        'type'      => 'COMMENT',
+                        'type'      => self::ITEM_TYPE_COMMENT,
                         'num'       => $n,
                         'key'       => null,
                         'value'     => $line,
@@ -144,7 +149,7 @@ class EtcHostsManager
                     $ip = @$parts[0];
                     if (preg_match('/[ \t]+/', @$parts[1])) {
                         $item = [
-                            'type'      => 'DOMAINMULTIPLE',
+                            'type'      => self::ITEM_TYPE_DOMAINMULTIPLE,
                             'num'       => $n,
                             'key'       => '',
                             'value'     => $line,
@@ -152,7 +157,7 @@ class EtcHostsManager
                     }
                     else { // if not multiple domains
                         $item = [
-                            'type'      => 'EMPTY',
+                            'type'      => self::ITEM_TYPE_EMPTY,
                             'num'       => $n,
                             'key'       => null,
                             'value'     => null,
@@ -163,7 +168,7 @@ class EtcHostsManager
                         if (!array_key_exists($domain, $uniqitems)) { // add only unique domain names
                             $uniqitems[$domain] = 1;
                             $item = [
-                                'type'      => 'DOMAIN',
+                                'type'      => self::ITEM_TYPE_DOMAIN,
                                 'num'       => $n,
                                 'key'       => $domain,
                                 'value'     => $ip,
@@ -183,13 +188,13 @@ class EtcHostsManager
      */
     private function cleanEOLs()
     {
-        $last_type = 'EMPTY';
+        $last_type = self::ITEM_TYPE_EMPTY;
         $len = count($this->items);
         $i = $len-1;
         do {
             $item = $this->items[$i];
             $type = $item['type'];
-            if ($type == 'EMPTY' && $last_type == 'EMPTY') {
+            if ($type == self::ITEM_TYPE_EMPTY && $last_type == self::ITEM_TYPE_EMPTY) {
                 array_splice($this->items, $i, 1);
                 $i--;
             }
@@ -197,7 +202,7 @@ class EtcHostsManager
                 break;
             }
             $i--;
-        } while ($i > 0 && $last_type == 'EMPTY');
+        } while ($i > 0 && $last_type == self::ITEM_TYPE_EMPTY);
     }
 
 }
